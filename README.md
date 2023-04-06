@@ -1,8 +1,8 @@
-# nginx-multiply-host with ssl
+# nginx-multy-host with ssl
 
 
 
-### "nginx-multiply-hosts" is a repository that contains the necessary files to enable multiple hosts and redirects using nginx and docker-compose, while also obtaining SSL from Certbot (Let's Encrypt).
+### "nginx-multy-hosts" is a repository that contains the necessary files to enable multiple hosts and redirects using nginx and docker-compose, while also obtaining SSL from Certbot (Let's Encrypt).
 
 
 ## Usage
