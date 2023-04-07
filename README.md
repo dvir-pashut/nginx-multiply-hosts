@@ -61,6 +61,7 @@ and add this to the end of the file
 this will renew the certifactes for you on a monthly bases 
 
 ## FAQ
+### Static Files
 
 what about static files you malaka??? (curse in australin... i dont know where you are from!!!)
 
