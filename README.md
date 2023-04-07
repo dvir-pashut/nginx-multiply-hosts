@@ -72,7 +72,7 @@ by adding this line to the docker compose
 and then modify the nginx.conf to use those by modifing the server block 
 it should look like this 
 
-'''sh
+```sh
  
 location / {
         
@@ -95,7 +95,7 @@ location / {
         add_header From  "backend";
     }
  
-'''
+```
 
 for more information refer to this [stack-overflow]
 
