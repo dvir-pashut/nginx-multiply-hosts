@@ -73,6 +73,7 @@ and then modify the nginx.conf to use those by modifing the server block
 it should look like this 
 
 '''sh
+ 
 location / {
         
         if ( $host != "your domain" ) {
