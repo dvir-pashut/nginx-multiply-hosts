@@ -60,6 +60,44 @@ and add this to the end of the file
 ```
 this will renew the certifactes for you on a monthly bases 
 
+## FAQ
+
+what about static files you malaka??? (curse in australin... i dont know where you are from!!!)
+
+whell first you need to add the static files to the nginx
+by adding this line to the docker compose 
+'''sh
+- "./<static files location>:/usr/share/nginx/html/<folder name to create with your files>"
+'''
+and then modify the nginx.conf to use those by modifing the server block 
+it should look like this 
+
+'''sh
+location / {
+        
+        if ( $host != "your domain" ) {
+        return 444 ;
+        }
+        root /usr/share/nginx/html/static;
+        add_header From  "nginx";
+        try_files $uri /$uri @backend;
+        
+    }
+
+    location @backend {
+        proxy_pass         http://<your backend app>;
+        
+        proxy_redirect     off;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+        add_header From  "backend";
+    }
+ '''
+for more information refer to this [stack-overflow]
+
+and also check out this [project] where a use static files from a gcp bucket  
+
 
 ## Contributing
 
@@ -71,3 +109,8 @@ to discuss what you would like to change.
 no license!!!!!!!!!!!
 
 free software
+
+[//]: # 
+
+[stack-overflow]: <https://stackoverflow.com/questions/12806893/use-nginx-to-serve-static-files-from-subdirectories-of-a-given-directory>
+[project]: <https://github.com/dvir-pashut/Devops-portfolio>
