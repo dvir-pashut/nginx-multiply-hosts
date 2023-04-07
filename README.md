@@ -66,9 +66,9 @@ what about static files you malaka??? (curse in australin... i dont know where y
 
 whell first you need to add the static files to the nginx
 by adding this line to the docker compose 
-'''sh
+```sh
 - "./<static files location>:/usr/share/nginx/html/<folder name to create with your files>"
-'''
+```
 and then modify the nginx.conf to use those by modifing the server block 
 it should look like this 
 
