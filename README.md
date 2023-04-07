@@ -93,7 +93,9 @@ location / {
         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
         add_header From  "backend";
     }
- '''
+ 
+'''
+
 for more information refer to this [stack-overflow]
 
 and also check out this [project] where a use static files from a gcp bucket  
